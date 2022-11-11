@@ -4,7 +4,7 @@ echo starttime=`date`
 targetDIR=`pwd`
 echo targetDIR=${targetDIR}
 
-conda create  --yes -p ${targetDIR}
+conda create  --yes -p ${targetDIR} --clone base
 conda install --yes -p ${targetDIR} -c conda-forge \
         "earthengine-api" \
         "numpy" \
