@@ -26,15 +26,15 @@ test.conda_create <- function(
         cat("\nConda environment creation begins: '",env.path,"'\n");
         my.python.path <- reticulate::conda_create(
             envname  = env.path,
-            packages = c("earthengine-api"),
             forge    = TRUE,
+            conda    = "auto",
+            packages = c("earthengine-api","google-cloud-sdk"),
             channel  = c(
                 'conda-forge',
                 'conda-forge/label/cf201901',
                 'conda-forge/label/cf202003',
                 'conda-forge/label/gcc7'
-                ),
-            conda    = "auto"
+                )
             );
         cat("\nConda environment creation complete: '",env.path,"'\n");
         }
