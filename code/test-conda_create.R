@@ -28,6 +28,12 @@ test.conda_create <- function(
             envname  = env.path,
             packages = c("earthengine-api"),
             forge    = TRUE,
+            channel  = c(
+                'conda-forge',
+                'conda-forge/label/cf201901',
+                'conda-forge/label/cf202003',
+                'conda-forge/label/gcc7'
+                ),
             conda    = "auto"
             );
         cat("\nConda environment creation complete: '",env.path,"'\n");
