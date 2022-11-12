@@ -21,8 +21,8 @@ require(reticulate);
 
 # source supporting R code
 code.files <- c(
-    "test-conda_clone-install_ee.R",
-    "test-conda_create.R"
+    "run-conda_create.R",
+    "test-conda_clone-install_ee.R"
     );
 
 for ( code.file in code.files ) {
@@ -43,7 +43,7 @@ gee.env.path <- file.path(output.directory,"condaEnvGEE");
 print( gee.env.path );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-test.conda_create(env.path = gee.env.path);
+run.conda_create(env.path = gee.env.path);
 
 # test.conda_clone.install_ee(
 #     clone.path   = gee.env.path,

@@ -1,9 +1,9 @@
 
-test.conda_create <- function(
+run.conda_create <- function(
     env.path = "condaEnvGEE"
     ) {
 
-    thisFunctionName <- "test.conda_create";
+    thisFunctionName <- "run.conda_create";
     cat("\n### ~~~~~~~~~~~~~~~~~~~~ ###");
     cat(paste0("\n",thisFunctionName,"() starts.\n\n"));
 
