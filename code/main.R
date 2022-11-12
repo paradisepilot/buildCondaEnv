@@ -39,7 +39,7 @@ n.cores  <- ifelse(test = is.macOS, yes = 2, no = parallel::detectCores() - 1);
 cat(paste0("\n# n.cores = ",n.cores,"\n"));
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-gee.env.path = file.path(output.directory,"condaEnvGEE");
+gee.env.path <- file.path(output.directory,"condaEnvGEE");
 print( gee.env.path );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
