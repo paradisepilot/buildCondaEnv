@@ -21,6 +21,12 @@ run.conda_create <- function(
     cat("\nenv.path\n");
     print( env.path   );
 
+    cat("\npackages\n");
+    print( packages   );
+
+    cat("\nchannels\n");
+    print( channels   );
+
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
     if ( dir.exists(env.path) ) {
         cat("\nThe conda environment '",env.path,"' already exists; activating this conda environment ...\n");
