@@ -1,6 +1,13 @@
 
 run.conda_create <- function(
-    env.path = "condaEnvGEE"
+    env.path = "condaEnvGEE",
+    packages = c("earthengine-api","google-cloud-sdk","geemap"),
+    channels = c(
+        'conda-forge',
+        'conda-forge/label/cf201901',
+        'conda-forge/label/cf202003',
+        'conda-forge/label/gcc7'
+        )
     ) {
 
     thisFunctionName <- "run.conda_create";
@@ -28,13 +35,8 @@ run.conda_create <- function(
             envname  = env.path,
             forge    = TRUE,
             conda    = "auto",
-            packages = c("earthengine-api","google-cloud-sdk"),
-            channel  = c(
-                'conda-forge',
-                'conda-forge/label/cf201901',
-                'conda-forge/label/cf202003',
-                'conda-forge/label/gcc7'
-                )
+            packages = packages,
+            channel  = channels
             );
         cat("\nConda environment creation complete: '",env.path,"'\n");
         }

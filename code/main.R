@@ -43,7 +43,16 @@ gee.env.path <- file.path(output.directory,"condaEnvGEE");
 print( gee.env.path );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-run.conda_create(env.path = gee.env.path);
+run.conda_create(
+    env.path = gee.env.path,
+    packages = c("earthengine-api","google-cloud-sdk","geemap"),
+    channels = c(
+        'conda-forge',
+        'conda-forge/label/cf201901',
+        'conda-forge/label/cf202003',
+        'conda-forge/label/gcc7'
+        )
+    );
 
 # test.conda_clone.install_ee(
 #     clone.path   = gee.env.path,
