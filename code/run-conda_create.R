@@ -1,6 +1,6 @@
 
 run.conda_create <- function(
-    env.path = "condaEnvGEE",
+    env.path = "./condaEnvGEE",
     packages = c("earthengine-api","google-cloud-sdk","geemap"),
     channels = c(
         'conda-forge',
@@ -15,7 +15,11 @@ run.conda_create <- function(
     cat(paste0("\n",thisFunctionName,"() starts.\n\n"));
 
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-    require(reticulate);
+    #     require(reticulate);
+    if(!require(reticulate,quietly = T)){
+        install.packages('reticulate');
+        library(reticulate);
+    }
 
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
     cat("\nenv.path\n");
