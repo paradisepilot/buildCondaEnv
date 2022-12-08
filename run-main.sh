@@ -36,14 +36,14 @@ cp    $0         ${outputDIR}/code
 myRscript=${codeDIR}/main.R
 stdoutFile=${outputDIR}/stdout.R.`basename ${myRscript} .R`
 stderrFile=${outputDIR}/stderr.R.`basename ${myRscript} .R`
-R --no-save --args ${dataDIR} ${codeDIR} ${outputDIR} < ${myRscript} > ${stdoutFile} 2> ${stderrFile}
+# R --no-save --args ${dataDIR} ${codeDIR} ${outputDIR} < ${myRscript} > ${stdoutFile} 2> ${stderrFile}
 
 ##################################################
 if [[ "${OSTYPE}" =~ .*"linux".* ]]; then
   echo
   echo "giving newly created environment a name by adding symbolic link ..."
   echo
-  ln -s ${outputDIR}/condaEnvGEE /opt/conda/envs/condaEnvGEE
+  # ln -s ${outputDIR}/condaEnvGEE /opt/conda/envs/condaEnvGEE
 fi
 
 ##################################################
