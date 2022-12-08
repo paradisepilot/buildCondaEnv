@@ -39,4 +39,11 @@ stderrFile=${outputDIR}/stderr.R.`basename ${myRscript} .R`
 R --no-save --args ${dataDIR} ${codeDIR} ${outputDIR} < ${myRscript} > ${stdoutFile} 2> ${stderrFile}
 
 ##################################################
+if [[ "${OSTYPE}" =~ .*"linux".* ]]; then
+  echo "giving newly created environment a name by adding symbolic linki ..."
+  ln -s ${outputDIR}/condaEnvGEE /opt/conda/envs/condaEnvGEE
+fi
+
+##################################################
 exit
+
