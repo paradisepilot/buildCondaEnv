@@ -40,7 +40,7 @@ R --no-save --args ${dataDIR} ${codeDIR} ${outputDIR} < ${myRscript} > ${stdoutF
 
 ##################################################
 if [[ "${OSTYPE}" =~ .*"linux".* ]]; then
-  echo "giving newly created environment a name by adding symbolic linki ..."
+  echo "giving newly created environment a name by adding symbolic link ..."
   ln -s ${outputDIR}/condaEnvGEE /opt/conda/envs/condaEnvGEE
 fi
 
