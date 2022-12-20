@@ -17,7 +17,13 @@ start.proc.time <- proc.time();
 setwd( output.directory );
 
 ##################################################
-require(reticulate);
+if(!require(reticulate)){
+    install.packages("reticulate")
+    library(reticulate)
+} 
+else {
+    library(reticulate)
+}
 
 # source supporting R code
 code.files <- c(
