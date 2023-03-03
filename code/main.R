@@ -49,7 +49,9 @@ run.conda_create(
         "earthengine-api",
         "google-cloud-sdk",
         "geemap",
-        "gdal"
+        "gdal",
+        "geopandas",
+        "rasterio"
         ),
     channels = c(
         'conda-forge',
@@ -58,7 +60,8 @@ run.conda_create(
         'conda-forge/label/gcc7',
         'conda-forge/label/TEST',
         'conda-forge/label/broken',
-        'conda-forge/label/gcc7'
+        'conda-forge/label/gcc7',
+        'conda-forge/label/rc'
         )
     );
 
