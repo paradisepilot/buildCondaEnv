@@ -22,6 +22,7 @@ require(reticulate);
 # source supporting R code
 code.files <- c(
     "run-conda_create.R",
+    "run-virtualenv_install.R",
     "test-conda_clone-install_ee.R"
     );
 
@@ -39,29 +40,35 @@ n.cores  <- ifelse(test = is.macOS, yes = 2, no = parallel::detectCores() - 1);
 cat(paste0("\n# n.cores = ",n.cores,"\n"));
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-gee.env.path <- file.path(output.directory,"condaEnvSpatial");
-print( gee.env.path );
+env.path <- file.path(output.directory,"envGeospatial");
+print( env.path );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 run.conda_create(
-    env.path = gee.env.path,
+    env.path = env.path,
     packages = c(
         "earthengine-api",
         "google-cloud-sdk",
-        "geemap",
-        "gdal",
-        "geopandas",
-        "rasterio"
+        "geemap"
         ),
     channels = c(
         'conda-forge',
         'conda-forge/label/cf201901',
         'conda-forge/label/cf202003',
-        'conda-forge/label/gcc7',
-        'conda-forge/label/TEST',
-        'conda-forge/label/broken',
-        'conda-forge/label/gcc7',
-        'conda-forge/label/rc'
+        'conda-forge/label/gcc7'
+        )
+    );
+
+run.virtualenv_install(
+    env.path = env.path,
+    packages = c(
+        "gdal",
+        "geopandas",
+        "rasterio",
+        "rHEALPixDGGS",
+        "ease-grid",
+        "pydggrid",
+        "dggrid4py"
         )
     );
 
