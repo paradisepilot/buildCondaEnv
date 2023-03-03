@@ -23,7 +23,8 @@ currentDIR=`pwd`
 outputDIR=${currentDIR//github/gittmp}/output.${timeStamp}
 
 parentDIR=`dirname ${currentDIR}`
-  dataDIR=${parentDIR}/000-data
+# dataDIR=${parentDIR}/000-data
+  dataDIR=000-data
 
 if [ ! -d ${outputDIR} ]; then
 	mkdir -p ${outputDIR}
