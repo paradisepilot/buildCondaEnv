@@ -39,17 +39,25 @@ n.cores  <- ifelse(test = is.macOS, yes = 2, no = parallel::detectCores() - 1);
 cat(paste0("\n# n.cores = ",n.cores,"\n"));
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
-gee.env.path <- file.path(output.directory,"condaEnvGEE");
+gee.env.path <- file.path(output.directory,"condaEnvSpatial");
 print( gee.env.path );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 run.conda_create(
     env.path = gee.env.path,
-    packages = c("earthengine-api","google-cloud-sdk","geemap"),
+    packages = c(
+        "earthengine-api",
+        "google-cloud-sdk",
+        "geemap",
+        "gdal"
+        ),
     channels = c(
         'conda-forge',
         'conda-forge/label/cf201901',
         'conda-forge/label/cf202003',
+        'conda-forge/label/gcc7',
+        'conda-forge/label/TEST',
+        'conda-forge/label/broken',
         'conda-forge/label/gcc7'
         )
     );
