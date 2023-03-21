@@ -43,15 +43,15 @@ cat(paste0("\n# n.cores = ",n.cores,"\n"));
 env.path <- file.path(output.directory,"envGeospatial");
 print( env.path );
 
-if ( !dir.exists(paths = env.path) ) {
-    dir.create(
-        path         = env.path,
-        showWarnings = TRUE,
-        recursive    = TRUE,
-        mode         = "0777"
-        );
-    }
-print( dir.exists(paths = env.path) );
+# if ( !dir.exists(paths = env.path) ) {
+#     dir.create(
+#         path         = env.path,
+#         showWarnings = TRUE,
+#         recursive    = TRUE,
+#         mode         = "0777"
+#         );
+#     }
+# print( dir.exists(paths = env.path) );
 
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###
 run.conda_create(
