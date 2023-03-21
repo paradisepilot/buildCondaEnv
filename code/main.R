@@ -77,6 +77,7 @@ run.virtualenv_install(
         "rasterio",
         "rHEALPixDGGS",
         "ease-grid",
+        "easepy",
         "pydggrid",
         "dggrid4py"
         )
