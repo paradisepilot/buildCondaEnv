@@ -27,8 +27,8 @@ parentDIR=`dirname ${currentDIR}`
   dataDIR=000-data
 
 if [ ! -d ${outputDIR} ]; then
-	mkdir -p ${outputDIR}
-  chmod -R ugo+w ${outputDIR}
+    mkdir -p ${outputDIR}
+    chmod -R ugo+w ${outputDIR}
 fi
 
 cp -r ${codeDIR} ${outputDIR}
