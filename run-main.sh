@@ -28,6 +28,7 @@ parentDIR=`dirname ${currentDIR}`
 
 if [ ! -d ${outputDIR} ]; then
 	mkdir -p ${outputDIR}
+  chmod -R ugo+w ${outputDIR}
 fi
 
 cp -r ${codeDIR} ${outputDIR}
